@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://bhw8sn1mh1jd6"]
+
+[ext_resource type="Texture2D" uid="uid://c88pt7qre560b" path="res://sprites/tilesets/grass.png" id="1_13cxv"]
+[ext_resource type="PackedScene" uid="uid://dxseud5vfy361" path="res://Scenes/Player.tscn" id="1_ytpnb"]
+[ext_resource type="Texture2D" uid="uid://cgapyh4yh5dd0" path="res://sprites/tilesets/plains.png" id="2_7ttdu"]
+[ext_resource type="PackedScene" uid="uid://cxjoegmlpa4av" path="res://Scenes/Mob.tscn" id="4_8eekd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u1ggs"]
+texture = ExtResource("1_13cxv")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3s3nu"]
+texture = ExtResource("2_7ttdu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8nchw"]
+sources/0 = SubResource("TileSetAtlasSource_u1ggs")
+sources/1 = SubResource("TileSetAtlasSource_3s3nu")
+
+[node name="MiniGame" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8nchw")
+format = 2
+layer_0/tile_data = PackedInt32Array(131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 65541, 0, 0, 5, 0, 0, 4, 0, 0, -65532, 0, 0, -65533, 0, 0, -65534, 0, 0, 1, 0, 0, 2, 0, 0, -65535, 0, 0, 0, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, -131070, 0, 0, -65536, 0, 0, 65535, 0, 0, 65536, 0, 0, -65531, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -2, 0, 0, 65534, 0, 0, 131071, 0, 0, 3, 0, 0, -131068, 0, 0, -131069, 0, 0, -196606, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -65539, 0, 0, -3, 0, 0, -4, 0, 0, 65533, 0, 0, 131069, 0, 0, 131070, 0, 0, 196607, 0, 0, 131072, 0, 0, -65540, 0, 0, -5, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0, 131067, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, -65541, 0, 0, -7, 0, 0, 65529, 0, 0, -1, 0, 0, 65531, 0, 0, 65532, 0, 0, 131068, 0, 0, -262144, 0, 0, -196609, 0, 0, -196610, 0, 0, -196611, 0, 0, -196612, 0, 0, -131077, 0, 0, -65542, 0, 0, -196605, 0, 0, -262141, 0, 0, -262142, 0, 0, -262143, 0, 0, -131075, 0, 0, -131076, 0, 0, -131078, 0, 0, -131079, 0, 0, -131080, 0, 0, -65544, 0, 0, -8, 0, 0, 196603, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_ytpnb")]
+position = Vector2(-26, -26)
+
+[node name="Mob" parent="." instance=ExtResource("4_8eekd")]
+position = Vector2(46, 40)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxjoegmlpa4av"]
+
+[ext_resource type="Script" path="res://scripts/Mob.gd" id="1_rh03j"]
+[ext_resource type="Texture2D" uid="uid://cy1st6qp42gaj" path="res://sprites/zombie.png" id="1_vuyoe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr300"]
+atlas = ExtResource("1_vuyoe")
+region = Rect2(0, 0, 21, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iunio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr300")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl48j"]
+size = Vector2(13, 20)
+
+[node name="Mob" type="CharacterBody2D"]
+script = ExtResource("1_rh03j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0.25, 0)
+scale = Vector2(0.97619, 1)
+sprite_frames = SubResource("SpriteFrames_iunio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_bl48j")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
